@@ -8,7 +8,7 @@ def root():
     return{"Welcome":"to my Novak Djokovic 10 latest news API"}
 
 @app.get("/api")
-async def news_api():
+def news_api():
     
     return {"Blic":blic_dict,"Mondo":mondo_dict}
 
