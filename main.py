@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return{"Welcome":"to my Novak Djokovic news API"}
+    return{"Welcome":"to my Novak Djokovic 10 latest news API"}
 
 @app.get("/api")
 async def news_api():
