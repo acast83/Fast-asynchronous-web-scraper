@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import datetime
 
+session = requests.Session()
 
 # blic web scrape 
 def blic_funct(num):
@@ -9,7 +10,7 @@ def blic_funct(num):
     # url
     blic_url = "https://www.blic.rs/search?q=novak+djokovic"
 
-    page=requests.get(blic_url)
+    page=session.get(blic_url)
     soup=BeautifulSoup(page.content,'html.parser')
     data= soup.find_all("div",{"class":"content-wrapper"})
 
@@ -51,7 +52,7 @@ def mondo_funct(num):
     #url
     mondo_url = "https://mondo.rs/Novak-Djokovic/tag13798/1"
 
-    page=requests.get(mondo_url)
+    page=session.get(mondo_url)
     soup=BeautifulSoup(page.content,'html.parser')
     data = soup.find_all("article",{"class":"news-wrapper"})
 
