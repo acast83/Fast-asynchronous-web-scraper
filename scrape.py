@@ -14,7 +14,7 @@ def blic_funct(num):
 
     page = session.get(blic_url)
     soup = BeautifulSoup(page.content, 'html.parser')
-    data = soup.find_all("div", {"class": "content-wrapper"})
+    data = soup.find_all("div", {"class": "news__content"})
 
     # output dictionary
     blic_dict = {}
@@ -24,12 +24,12 @@ def blic_funct(num):
     while index < 20:
 
         # article title
-        article_title = data[index].find("p").text
+        article_title = data[index].find("a").text
         if "Novak" or "novak" or "NOVAK" in article_title:
             article_dict = {}
 
             # article date
-            article_date = data[index].find("span").text[6:16]
+            article_date = data[index].find("time").text.strip()
             article_dict["Date"] = article_date
 
             # adding article title to a dictionary
