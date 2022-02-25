@@ -25,7 +25,7 @@ def blic_funct(num):
 
         # article title
         article_title = data[index].find("a").text
-        if "Novak" or "novak" or "NOVAK" in article_title:
+        if "novak" in article_title.lower():
             article_dict = {}
 
             # article date
