@@ -21,6 +21,10 @@ asyncio library, along with other libraries like BeautifulSoup, httpx, and async
 Install the required libraries with the following command:
 
 ```
+mkdir scraper
+cd sraper
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
