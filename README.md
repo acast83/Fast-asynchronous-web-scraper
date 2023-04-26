@@ -1,12 +1,57 @@
-# Novak Djokovic latest news REST API
-This is my second Fast Api project. Main purpose of of this Api project is to scrape information 
-about articles on subject Novak Djokovic from two Serbian websites, blic.rs, and mondo.rs, and also to provide an endpoint with information about specific number of latest articles from each website. It features multiprocessing, so it should provide fast response.
+# Asynchronous Web Scraper
 
-This REST API project is live on Heroku: https://novak-djokovic-latest-news-res.herokuapp.com
+This script is an asynchronous web scraper that extracts data from two Serbian news websites: [blic.rs](https://www.blic.rs) and [mondo.rs](https://mondo.rs). It is built using Python's
+asyncio library, along with other libraries like BeautifulSoup, httpx, and asyncclick.
 
-Main endpoint, provides information about 5 latest articles from each website: https://novak-djokovic-latest-news-res.herokuapp.com/api
+## Features
 
-Custom endpoint, client can choose between 1 and 10 latest articles: https://novak-djokovic-latest-news-res.herokuapp.com/api/{number_of_articles}
+- Asynchronous execution for faster scraping
+- Scrapes the latest news articles from blic.rs and mondo.rs
+- Customizable search term for scraping relevant articles
+- Outputs results in a JSON format
 
-Interactive documentation automatically created by Fast Api: https://novak-djokovic-latest-news-res.herokuapp.com/docs
+## Requirements
+
+- Python 3.7+
+- BeautifulSoup
+- httpx
+- asyncclick
+
+Install the required libraries with the following command:
+
+```
+pip install -r requirements.txt
+```
+
+## Usage
+
+The script can be run from the command line using the following command:
+
+Replace "Srbija" with your desired search term.
+
+### Example Output
+
+The script will output the scraped data in a JSON format like this:
+
+```json
+{
+  "blic_articles": {
+    "article_0": {
+      "Date": "26.04.2023",
+      "Title": "Some Article Title",
+      "Hyperlink": "https://www.blic.rs/some-article-link"
+    },
+    ...
+  },
+  "mondo_articles": {
+    "article_1": {
+      "Date": "26.04.2023",
+      "Title": "Another Article Title",
+      "Hyperlink": "https://mondo.rs/another-article-link"
+    },
+    ...
+  }
+}
+
+
 
