@@ -1,6 +1,7 @@
 # Fast asynchronous Web Scraper
 
-This script is an asynchronous web scraper that extracts data from two Serbian news websites: [blic.rs](https://www.blic.rs) and [mondo.rs](https://mondo.rs). It is built using Python's
+This script is an asynchronous web scraper that extracts news articles data from two Serbian news websites: [blic.rs](https://www.blic.rs) and [mondo.rs](https://mondo.rs). It is built using
+Python's
 asyncio library, along with other libraries like BeautifulSoup, httpx, and asyncclick.
 
 ## Features
@@ -27,7 +28,9 @@ pip install -r requirements.txt
 
 The script can be run from the command line using the following command:
 
-Replace "Srbija" with your desired search term.
+```
+python scraper.py -s "srbija danas"
+```
 
 ### Example Output
 
